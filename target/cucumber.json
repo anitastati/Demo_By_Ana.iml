@@ -3,11 +3,11 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2022-10-07T07:30:41.835Z",
+        "start_timestamp": "2022-10-07T11:48:11.537Z",
         "before": [
           {
             "result": {
-              "duration": 1988000000,
+              "duration": 1999000000,
               "status": "passed"
             },
             "match": {
@@ -22,7 +22,7 @@
         "after": [
           {
             "result": {
-              "duration": 680000000,
+              "duration": 688000000,
               "status": "passed"
             },
             "match": {
@@ -35,7 +35,7 @@
         "steps": [
           {
             "result": {
-              "duration": 555000000,
+              "duration": 795000000,
               "status": "passed"
             },
             "line": 7,
@@ -47,11 +47,11 @@
           },
           {
             "result": {
-              "duration": 2014000000,
+              "duration": 3303000000,
               "status": "passed"
             },
             "line": 8,
-            "name": "I login as a sales manager \"storemanager67\" and \"UserUser123\"",
+            "name": "I login as a store manager \"storemanager67\" and \"UserUser123\"",
             "match": {
               "arguments": [
                 {
@@ -63,7 +63,79 @@
                   "offset": 48
                 }
               ],
-              "location": "com.demo.step_definitions.login.i_login_as_a_sales_manager(java.lang.String,java.lang.String)"
+              "location": "com.demo.step_definitions.login.i_login_as_a_store_manager(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-10-07T11:48:18.402Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1281000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.demo.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "login with correct credentials",
+        "description": "",
+        "id": "login-feature;login-with-correct-credentials;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 665000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.demo.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 645000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user is on vytrack login page",
+            "match": {
+              "location": "com.demo.step_definitions.login.i_am_on_vytrack_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2528000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I login as a store manager \"storemanager87\" and \"UserUser123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"storemanager87\"",
+                  "offset": 27
+                },
+                {
+                  "val": "\"UserUser123\"",
+                  "offset": 48
+                }
+              ],
+              "location": "com.demo.step_definitions.login.i_login_as_a_store_manager(java.lang.String,java.lang.String)"
             },
             "keyword": "Then "
           }

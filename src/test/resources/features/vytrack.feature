@@ -5,9 +5,10 @@ Feature:Login feature
 
   Scenario Outline:login with correct credentials
     Given user is on vytrack login page
-    Then I login as a sales manager "<username>" and "<password>"
+    Then I login as a store manager "<username>" and "<password>"
 
 
 Examples:
     |username      |password|
     |storemanager67|UserUser123|
+    |storemanager87|UserUser123|
