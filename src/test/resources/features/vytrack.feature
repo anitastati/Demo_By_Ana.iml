@@ -11,4 +11,3 @@ Feature:Login feature
 Examples:
     |username      |password|
     |storemanager67|UserUser123|
-    |storemanager87|UserUser123|
