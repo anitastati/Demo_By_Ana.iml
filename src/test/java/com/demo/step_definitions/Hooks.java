@@ -2,53 +2,48 @@ package com.demo.step_definitions;
 
 
 import com.demo.utilities.BrowserUtils;
+import com.demo.utilities.DBUtils;
 import com.demo.utilities.Driver;
 import io.cucumber.java.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
-    @Before (order = 2)
-    public void setUpScenario(){
-        System.out.println("------Setting up browser with further details...");
+    @Before
+    public void setUp(){
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.get().manage().window().maximize();
     }
 
-    @Before(value = "@db", order = 1)
-    public void setUpDatabase(){
-        System.out.println("----- CONNECTING TO DATABASE ");
-    }
-
-    @After(value = "@db", order = 1)
-    public void closeDBConnection(){
-        System.out.println("------Closing browser");
-        System.out.println("------Take a screenshot");
-    }
-
-    @After (order = 2)
-    public void tearDownScenario(Scenario scenario){
-        //if my scenario failed
-        // go and take screen shot
-
-        if (scenario.isFailed()) {
-            byte[] screenShot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(screenShot, "image/png", scenario.getName());
+    @After
+    public void tearDown(Scenario scenario){
+        if(scenario.isFailed()){
+            final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png","screenshot");
         }
 
-       // BrowserUtils.sleep(1);
         Driver.closeDriver();
 
     }
 
-    @BeforeStep
-    public void runBeforeSteps(){
-        System.out.println("________________Running Before Each STEP ________________");
+    @Before("@db")
+    public void dbHook() {
+        System.out.println("creating database connection");
+        DBUtils.createConnection();
+    }
+
+    @After("@db")
+    public void afterDbHook() {
+        System.out.println("closing database connection");
+        DBUtils.destroy();
 
     }
 
-    @AfterStep
-    public void runsAfterSteps(){
-        System.out.println("________________Running AFTER Each STEP ________________");
-    }
+
+
+
 
 }

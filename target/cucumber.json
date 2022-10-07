@@ -1,162 +1,94 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-05-20T13:22:33.261Z",
+        "start_timestamp": "2022-10-07T07:30:41.835Z",
         "before": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1988000000,
               "status": "passed"
             },
             "match": {
-              "location": "com.demo.step_definitions.Hooks.setUpScenario()"
+              "location": "com.demo.step_definitions.Hooks.setUp()"
             }
           }
         ],
-        "line": 9,
-        "name": "Etsy search title verification",
+        "line": 13,
+        "name": "login with correct credentials",
         "description": "",
-        "id": "etsy-search-feature;etsy-search-title-verification",
+        "id": "login-feature;login-with-correct-credentials;;2",
         "after": [
           {
             "result": {
-              "duration": 670000000,
+              "duration": 680000000,
               "status": "passed"
             },
             "match": {
-              "location": "com.demo.step_definitions.Hooks.tearDownScenario(io.cucumber.java.Scenario)"
+              "location": "com.demo.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
             }
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 3217000000,
+              "duration": 555000000,
               "status": "passed"
             },
-            "before": [
-              {
-                "result": {
-                  "status": "passed"
-                },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runBeforeSteps()"
-                }
-              }
-            ],
-            "line": 10,
-            "name": "user is on the Etsy landing page",
+            "line": 7,
+            "name": "user is on vytrack login page",
             "match": {
-              "location": "com.demo.step_definitions.Etsy_StepDefinitions.user_is_on_the_etsy_landing_page()"
+              "location": "com.demo.step_definitions.login.i_am_on_vytrack_login_page()"
             },
-            "after": [
-              {
-                "result": {
-                  "duration": 1000000,
-                  "status": "passed"
-                },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runsAfterSteps()"
-                }
-              }
-            ],
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 2373000000,
+              "duration": 2014000000,
               "status": "passed"
             },
-            "before": [
-              {
-                "result": {
-                  "duration": 1000000,
-                  "status": "passed"
-                },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runBeforeSteps()"
-                }
-              }
-            ],
-            "line": 11,
-            "name": "user searches for \"books\"",
+            "line": 8,
+            "name": "I login as a sales manager \"storemanager67\" and \"UserUser123\"",
             "match": {
               "arguments": [
                 {
-                  "val": "\"books\"",
-                  "offset": 18
-                }
-              ],
-              "location": "com.demo.step_definitions.Etsy_StepDefinitions.userSearchesFor(java.lang.String)"
-            },
-            "after": [
-              {
-                "result": {
-                  "status": "passed"
+                  "val": "\"storemanager67\"",
+                  "offset": 27
                 },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runsAfterSteps()"
-                }
-              }
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 8000000,
-              "status": "passed"
-            },
-            "before": [
-              {
-                "result": {
-                  "duration": 1000000,
-                  "status": "passed"
-                },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runBeforeSteps()"
-                }
-              }
-            ],
-            "line": 12,
-            "name": "user should see \"Books\" in the Etsy title",
-            "match": {
-              "arguments": [
                 {
-                  "val": "\"Books\"",
-                  "offset": 16
+                  "val": "\"UserUser123\"",
+                  "offset": 48
                 }
               ],
-              "location": "com.demo.step_definitions.Etsy_StepDefinitions.userShouldSeeInTheEtsyTitle(java.lang.String)"
+              "location": "com.demo.step_definitions.login.i_login_as_a_sales_manager(java.lang.String,java.lang.String)"
             },
-            "after": [
-              {
-                "result": {
-                  "status": "passed"
-                },
-                "match": {
-                  "location": "com.demo.step_definitions.Hooks.runsAfterSteps()"
-                }
-              }
-            ],
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@etsy"
+            "name": "@wip"
           }
         ]
       }
     ],
-    "name": "Etsy search feature",
-    "description": "",
-    "id": "etsy-search-feature",
+    "name": "Login feature",
+    "description": "  As I user, I should be able to login",
+    "id": "login-feature",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/features/etsySearch.feature",
-    "tags": []
+    "uri": "file:src/test/resources/features/vytrack.feature",
+    "tags": [
+      {
+        "name": "@wip",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

@@ -6,31 +6,25 @@ import java.util.Properties;
 
 public class ConfigurationReader {
 
-    //In this class we will implement the repeated steps of reading
-    // from configuration.properties file
-
-    //#1- Create the object of Properties
-    private static Properties properties = new Properties();
+    private static Properties properties;
 
     static {
-        //#2- Get the path and open the file
+
         try {
-            FileInputStream file = new FileInputStream("configuration.properties");
+            String path = "configuration.properties";
+            FileInputStream input = new FileInputStream(path);
+            properties = new Properties();
+            properties.load(input);
 
-            //#3- Load the opened file into properties object
-            properties.load(file);
-
-            //closing the file in JVM Memory
-            file.close();
-
-        } catch (IOException e) {
+            input.close();
+        } catch (Exception e) {
             e.printStackTrace();
+
         }
     }
 
-    //#4- Use the object to read from the configuration.properties file
-    public static String getProperty(String keyWord){
-        return properties.getProperty(keyWord);
+    public static String get(String keyName) {
+        return properties.getProperty(keyName);
     }
 
 }
